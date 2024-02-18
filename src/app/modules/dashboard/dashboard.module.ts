@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { YourJourneyComponent } from './your-journey/your-journey.component';
 import { ProfileCardComponent } from 'src/app/components/profile-card/profile-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     YourJourneyComponent,
     ProfileCardComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule, ReactiveFormsModule],
+  imports: [CommonModule, FontAwesomeModule, ReactiveFormsModule, RouterModule],
 })
 export class DashboardModule {}

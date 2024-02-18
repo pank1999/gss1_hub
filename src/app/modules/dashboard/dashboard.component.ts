@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   IconDefinition,
@@ -22,7 +22,7 @@ interface CenterMenuItem {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   envelopeOpen = faEnvelopeOpen;
   userGroup = faUserGroup;
   layerGroup = faLayerGroup;
@@ -133,6 +133,10 @@ export class DashboardComponent {
   ];
 
   upcomingWorkAnniversary: Employee[] = UpcomingWorkAnniversary;
+
+  ngOnInit(): void {
+    this.upcomingWorkAnniversary = this.upcomingWorkAnniversary.slice(0, 4);
+  }
 
   handleClick(menuItem: CenterMenuItem) {
     if (menuItem.label === 'Your Journey')
