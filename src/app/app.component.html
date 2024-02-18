@@ -1,9 +1,26 @@
 <div class="wrapper">
   <div class="left-sidebar">
-    <app-sidebar (toggleSidebar)="handleSidebarToggle($event)" ></app-sidebar>
+    <app-sidebar (toggleSidebar)="handleSidebarToggle($event)"></app-sidebar>
   </div>
-   <div class="main-area">
-     <app-navbar></app-navbar>
-     <router-outlet></router-outlet>
-   </div>
+  <div class="main-area">
+    <app-navbar (showUserInfo)="showUserInfoDropdown($event)"></app-navbar>
+    <div *ngIf="showUserDropdown" class="dropdown-content">
+        <div
+          class="profile-img"
+          [style.background-image]="'url(./../../../assets/avatar.png)'"
+        ></div>
+        <h2>Chhatrapani Gautom</h2>
+        <span>Edit Profile</span><fa-icon [icon]="faEdit" ></fa-icon>
+        <h3>My Options</h3>
+        <div class="myOptions" >
+          <p>Designation</p>
+          <p>Sitemap</p>
+          <!-- 
+          <p>Position: Specialist</p>
+          <p>Age : 32</p> -->
+        </div>
+      <button>Sign out</button>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
 </div>

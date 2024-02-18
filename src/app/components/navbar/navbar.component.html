@@ -1,25 +1,19 @@
 <!-- Top navigation -->
 <div class="topnav">
-    <!-- Left-aligned links (default) -->
-    <div>
-        <img src="./../../../assets/logo_hub.png" height="40" width="100" />
-    </div>
+  <div>
+    <img src="./../../../assets/logo_hub.png" height="40" width="100" />
+  </div>
 
-  <!-- Centered link -->
   <div class="topnav-centered">
-      <a href="#home" class="active">
-        <img src="./../../../assets/MetLife.png" />
+    <a href="#home" class="active">
+      <img src="./../../../assets/MetLife.png" />
     </a>
   </div>
 
-  <!-- Right-aligned links -->
   <div class="topnav-right">
     <input type="text" placeholder="Search..." />
-    <fa-icon [icon]="faBell" size="xl" ></fa-icon>
+    <fa-icon [icon]="faBell" size="xl"></fa-icon>
     <span>Chhatrapani...</span>
-    <div class="user">
-        CP
-    </div>
+    <div class="user" (click)="handleUserClick()" >CP</div>
   </div>
-
 </div>

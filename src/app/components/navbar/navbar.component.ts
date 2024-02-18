@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,4 +8,11 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent {
   faBell = faBell;
+  showInfo = false;
+  @Output() showUserInfo = new EventEmitter();
+
+  handleUserClick() {
+    this.showInfo = !this.showInfo;
+    this.showUserInfo.emit(this.showInfo);
+  }
 }

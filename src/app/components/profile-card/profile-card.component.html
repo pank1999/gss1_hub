@@ -1,7 +1,7 @@
 <div class="card">
   <div class="top"></div>
   <div class="profile-img" *ngIf="!!employee.profileImg;else initials" [style.background-image]="'url(' + employee.profileImg + ')'"  >
-    <!-- <img *ngIf="!!employee.profileImg;else initials" src="./../../../assets/avatar.png" height="80"  width="120"  alt="img"/> -->
+   
   </div>
   <ng-template  #initials>
     <div  class="profile-img">
